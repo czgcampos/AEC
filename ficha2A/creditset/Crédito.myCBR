@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Project name="Cr&#233;dito" author="" >
+<svs>
+  <sv name="_unknown_"/>
+  <sv name="_undefined_"/>
+<fct name="default function" type="Symbol" mt="PARTNER_QUERY" r="REUSE" t="MAX" symm="true">
+<qsym name="_unknown_">
+</qsym>
+<qsym name="_undefined_">
+</qsym>
+</fct>
+</svs>
+<model>
+  <concept name="Empr&#233;stimo">
+    <desc name="income" type="Float" min="20014.49" max="69995.69" mult="false" >
+      <fct name="SimIncome" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="POLYNOMIAL_WITH" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+    </desc>
+    <desc name="LTI" type="Float" min="4.90738E-5" max="0.19993767" mult="false" >
+      <fct name="SimLTI" type="Float" ltype="CONSTANT" lparam="1.0" rtype="POLYNOMIAL_WITH" rparam="3.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+      <fct name="SimLTI2" type="Float" ltype="CONSTANT" lparam="1.0" rtype="POLYNOMIAL_WITH" rparam="9.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+    </desc>
+    <desc name="loan" type="Float" min="1.3776296" max="13766.051" mult="false" >
+      <fct name="SimLoan" type="Float" ltype="CONSTANT" lparam="1.0" rtype="POLYNOMIAL_WITH" rparam="3.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+    </desc>
+    <desc name="clientid" type="Integer" min="1" max="2000" mult="false" >
+      <fct name="SimClientId" type="Integer" ltype="POLYNOMIAL_WITH" lparam="0.0" rtype="POLYNOMIAL_WITH" rparam="0.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
+      <fct name="SimClientId2" type="Integer" ltype="CONSTANT" lparam="1.0" rtype="POLYNOMIAL_WITH" rparam="9.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
+    </desc>
+    <desc name="default10yr" type="Integer" min="0" max="1" mult="false" >
+      <fct name="SimDefault10yr" type="Integer" ltype="STEP_AT" lparam="0.0" rtype="STEP_AT" rparam="-0.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" />
+    </desc>
+    <desc name="age" type="Float" min="18.05519" max="63.971794" mult="false" >
+      <fct name="SimAge" type="Float" ltype="CONSTANT" lparam="1.0" rtype="POLYNOMIAL_WITH" rparam="3.0" mode="DIFFERENCE" symm="false" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+      <fct name="SimAge2" type="Float" ltype="POLYNOMIAL_WITH" lparam="1.0" rtype="POLYNOMIAL_WITH" rparam="1.0" mode="DIFFERENCE" symm="true" mt="PARTNER_QUERY" r="REUSE" t="MAX" maxForQuotient="10.0" />
+    </desc>
+    <amalgam name="default function" type="EUCLIDEAN" active="true" >
+      <entry name="income" active="true" fct="SimIncome" weight="5.0"/>
+      <entry name="LTI" active="false" fct="SimLTI" weight="3.0"/>
+      <entry name="loan" active="true" fct="SimLoan" weight="4.0"/>
+      <entry name="clientid" active="true" fct="SimClientId" weight="0.0"/>
+      <entry name="default10yr" active="true" fct="SimDefault10yr" weight="2.0"/>
+      <entry name="age" active="true" fct="SimAge" weight="1.0"/>
+    </amalgam>
+  </concept>
+</model>
+<hierarchy>
+  <fct name="default function" type="Taxonomy" mt="PARTNER_QUERY" r="REUSE" t="MAX" qconfig="INNER_NODES_ANY" cconfig="INNER_NODES_ANY" top="inheritanceDesc" sim="0.0" symm="true" >
+    <node name="Empr&#233;stimo" sim="1.0" parent="inheritanceDesc" />
+  </fct>
+</hierarchy>
+<cases no="2000" cb="CB_csvImport"/>
+</Project>

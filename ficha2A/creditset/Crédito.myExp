@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Project name="Cr&#233;dito" author="" >
+<exp obj="Cr&#233;dito" type="Concept" >
+  <desc>
+  </desc>
+</exp>
+<exp obj="Empr&#233;stimo" type="Concept" >
+  <desc>
+  </desc>
+</exp>
+<exp obj="income" c="Empr&#233;stimo" type="AttributeDesc" >
+  <desc>
+  </desc>
+</exp>
+<exp obj="age" c="Empr&#233;stimo" type="AttributeDesc" >
+  <desc>
+  </desc>
+</exp>
+<exp obj="loan" c="Empr&#233;stimo" type="AttributeDesc" >
+  <desc>
+  </desc>
+</exp>
+<exp obj="LTI" c="Empr&#233;stimo" type="AttributeDesc" >
+  <desc>
+  </desc>
+</exp>
+<exp obj="default10yr" c="Empr&#233;stimo" type="AttributeDesc" >
+  <desc>
+  </desc>
+</exp>
+<exp obj="clientid" c="Empr&#233;stimo" type="AttributeDesc" >
+  <desc>
+  </desc>
+</exp>
+</Project>
